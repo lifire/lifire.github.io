@@ -137,6 +137,138 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-H5与App数据交互文档" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/10/H5与App数据交互文档/">H5与APP数据交互</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/10/H5与App数据交互文档/" class="archive-article-date">
+  	<time datetime="2019-05-10T07:28:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1，目的"><a href="#1，目的" class="headerlink" title="1，目的"></a>1，目的</h2><p>App混合开发过程中，web页面与原生App之间需要进行数据的交互，比如用户登录信息的使用，为避免App内访问web页面无登录状态，或者App内web页面登录后用户信息与App内本地缓存信息不一致，需要通过实现APP与H5页面数据互相传递来决绝这一类问题。</p>
+<h2 id="2，业务流程"><a href="#2，业务流程" class="headerlink" title="2，业务流程"></a>2，业务流程</h2><p>1.App打开WebView,并向落地H5页面传输来自APP标识的参数</p>
+<pre><code>{
+    fromType = 设备类型（ios/Android）
+} 
+</code></pre><p>2.H5页面加载完成后，先校验本地用户信息是否正确，正常则按web流程走，否则向APP请求用户信息</p>
+<pre><code>{
+    if(localStorage.getItem(&apos;userInfo&apos;)){
+        // do something...
+    }else if(that.fromType == &apos;ios&apos; || that.fromType == &apos;Android&apos;){ // 判断是否来自App
+        var appInfo = JSON.parse(fetchTicket ())
+        if(appInfo.code == 1000){
+            // 向App请求数据成功，修改本地信息
+            that.uuid = appInfo.values.uuid
+            that.ticket = appInfo.values.ticket
+            // do something...
+          }
+    }
+}
+</code></pre><p>3.业务流程中需要强制用户登录，通过resetTicket()向App请求刷新用户数据</p>
+<pre><code>{
+    if(!that.ticket &amp;&amp; (that.fromType == &apos;ios&apos; || that.fromType == &apos;Android&apos;) &amp;&amp; !that.isShare){
+        resetTicket()
+     }else{
+        // do something...
+     }
+}
+</code></pre><h2 id="3，方法"><a href="#3，方法" class="headerlink" title="3，方法"></a>3，方法</h2><h3 id="fetchTicket"><a href="#fetchTicket" class="headerlink" title="fetchTicket()"></a>fetchTicket()</h3><p>获取当前登录的ticket</p>
+<pre><code>var fetchTicket = function (){
+
+    var args = arguments; // arguments 参数字典(暂时用不上，先留着)
+    var type = &quot;JSbridge&quot;; // type 固定的一个类型名称
+    var funcName = &quot;fetchTicket&quot;; // funcName 方法名
+
+    var payload = {&quot;type&quot;: type, &quot;funcName&quot;: funcName, &quot;arguments&quot;: args};
+    var res = prompt(JSON.stringify(payload));
+    return res
+};
+</code></pre><h3 id="resetTicket"><a href="#resetTicket" class="headerlink" title="resetTicket()"></a>resetTicket()</h3><p>重新登录获取ticket</p>
+<pre><code>var resetTicket = function(){
+
+    var args = arguments;
+    var type = &quot;JSbridge&quot;;
+    var funcName = &quot;resetTicket&quot;;
+
+    var payload = {&quot;type&quot;: type, &quot;funcName&quot;: funcName, &quot;arguments&quot;: args};
+    var res = prompt(JSON.stringify(payload));
+    return res
+  }
+</code></pre><h2 id="4-注意"><a href="#4-注意" class="headerlink" title="4,注意"></a>4,注意</h2><p>H5页面中，应注意区分当前页面<strong>来源</strong>做不同的业务处理；</p>
+<p>fetchTicket() 与 resetTicket()只在带有<strong>fromType = ios/Android</strong> 的环境下触发！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">app</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进阶</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/10/H5与App数据交互文档/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-webTool" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -968,92 +1100,6 @@ h2 {color:silver;}
 
 
   
-    <article id="post-HTML-基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/06/HTML-基础/">HTML 基础</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/06/HTML-基础/" class="archive-article-date">
-  	<time datetime="2017-11-06T06:38:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>磨刀不误砍柴工，万丈高楼平地起，打好基础才是登上人生巅峰的捷径。<br>让我们先来了解下一些基础知识。</p>
-<h3 id="什么是HTML？"><a href="#什么是HTML？" class="headerlink" title="什么是HTML？"></a>什么是HTML？</h3><p>HTML 是用来描述网页的一种语言。</p>
-<ul>
-<li>HTML 指的是超文本标记语言（<strong>H</strong>yper <strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage）</li>
-<li>HTML 不是一种编程语言，而是一种<strong>标记语言</strong>（markup language）</li>
-<li>标记语言是一套<strong>标记标签</strong>（markup tag）</li>
-<li><p>HTML 使用<strong>标记标签</strong>来描述网页</p></li></ul>
-        
-          <a class="article-more-a" href="/2017/11/06/HTML-基础/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/06/HTML-基础/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1143,6 +1189,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">app</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">进阶</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
@@ -1151,7 +1209,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">标签</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css 基础语法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1159,11 +1225,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">标签</a>
+                <a href="javascript:void(0)" class="js-tag color4">盒模型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css 基础语法</a>
+                <a href="javascript:void(0)" class="js-tag color1">float</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">浮动</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1172,10 +1242,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">路线</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">盒模型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1200,14 +1266,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">float</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">浮动</a>
               </li>
              
               <li class="article-tag-list-item">
