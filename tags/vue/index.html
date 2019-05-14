@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://blog.lifire.cn">
-  <title>css选择器 | lifire的博客</title>
+  <title>Tag: vue | lifire的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="元素选择器 选择器分组 类选择器 id选择器 属性选择器 后代选择器 子元素选择器 兄弟选择器 伪类  元素选择器最常见的 CSS 选择器是元素选择器。换句话说，文档的元素就是最基本的选择器。如果设置 HTML 的样式，选择器通常将是某个 HTML 元素，比如 p、h1、em、a，甚至可以是 html 本身： html {color:black;} h1 {color:blue;} h2 {co">
-<meta name="keywords" content="基础,css,css选择器">
-<meta property="og:type" content="article">
-<meta property="og:title" content="css选择器">
-<meta property="og:url" content="http://blog.lifire.cn/2019/02/15/cssSelect/index.html">
+  <meta name="description" content="lifire的博客,前端知识收集站">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,编程,代码,开源,IT网站,Coder,html,css,css3,用户体验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="lifire的博客">
+<meta property="og:url" content="http://blog.lifire.cn/tags/vue/index.html">
 <meta property="og:site_name" content="lifire的博客">
-<meta property="og:description" content="元素选择器 选择器分组 类选择器 id选择器 属性选择器 后代选择器 子元素选择器 兄弟选择器 伪类  元素选择器最常见的 CSS 选择器是元素选择器。换句话说，文档的元素就是最基本的选择器。如果设置 HTML 的样式，选择器通常将是某个 HTML 元素，比如 p、h1、em、a，甚至可以是 html 本身： html {color:black;} h1 {color:blue;} h2 {co">
+<meta property="og:description" content="lifire的博客,前端知识收集站">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-15T06:34:41.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css选择器">
-<meta name="twitter:description" content="元素选择器 选择器分组 类选择器 id选择器 属性选择器 后代选择器 子元素选择器 兄弟选择器 伪类  元素选择器最常见的 CSS 选择器是元素选择器。换句话说，文档的元素就是最基本的选择器。如果设置 HTML 的样式，选择器通常将是某个 HTML 元素，比如 p、h1、em、a，甚至可以是 html 本身： html {color:black;} h1 {color:blue;} h2 {co">
+<meta name="twitter:title" content="lifire的博客">
+<meta name="twitter:description" content="lifire的博客,前端知识收集站">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -136,345 +135,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-cssSelect" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      css选择器
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/05/14/vue-history模式下去除-号/" class="archive-article-date">
+  	<time datetime="2019-05-14T02:36:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-14</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/05/14/vue-history模式下去除-号/">vue history模式下去除#号</a>
     </h1>
   
 
-        
-        <a href="/2019/02/15/cssSelect/" class="archive-article-date">
-  	<time datetime="2019-02-15T02:38:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>元素选择器</li>
-<li>选择器分组</li>
-<li>类选择器</li>
-<li>id选择器</li>
-<li>属性选择器</li>
-<li>后代选择器</li>
-<li>子元素选择器</li>
-<li>兄弟选择器</li>
-<li>伪类</li>
-</ul>
-<h2 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h2><p>最常见的 CSS 选择器是元素选择器。换句话说，文档的元素就是最基本的选择器。<br>如果设置 HTML 的样式，选择器通常将是某个 HTML 元素，比如 p、h1、em、a，甚至可以是 html 本身：</p>
-<pre><code>html {color:black;}
-h1 {color:blue;}
-h2 {color:silver;}
-</code></pre><p>在 W3C 标准中，元素选择器又称为<strong>类型选择器</strong>（type selector）。<br>“类型选择器匹配文档语言元素类型的名称。类型选择器匹配文档树中该元素类型的每一个实例。”<br>下面的规则匹配文档树中所有 h1 元素：</p>
-<pre><code>h1 {font-family: sans-serif;}
-</code></pre><a id="more"></a>
-<h2 id="选择器分组"><a href="#选择器分组" class="headerlink" title="选择器分组"></a>选择器分组</h2><p>假设希望 h2 元素和段落都有灰色。为达到这个目的，最容易的做法是使用以下声明：</p>
-<pre><code>h2, p {color:gray;}
-</code></pre><p>将 h2 和 p 选择器放在规则左边，然后用逗号分隔，就定义了一个规则。其右边的样式（color:gray;）将应用到这两个选择器所引用的元素。逗号告诉浏览器，规则中包含两个不同的选择器。如果没有这个逗号，那么规则的含义将完全不同。参见后代选择器。<br>可以将任意多个选择器分组在一起，对此没有任何限制。<br>例如，如果您想把很多元素显示为灰色，可以使用类似如下的规则：</p>
-<pre><code>body, h2, p, table, th, td, pre, strong, em {color:gray;}
-</code></pre><p>通过分组，创作者可以将某些类型的样式“压缩”在一起，这样就可以得到更简洁的样式表。<br>以下的两组规则能得到同样的结果，不过可以很清楚地看出哪一个写起来更容易：</p>
-<pre><code>/* no grouping */
-h1 {color:blue;}
-h2 {color:blue;}
-h3 {color:blue;}
-h4 {color:blue;}
-h5 {color:blue;}
-h6 {color:blue;}
-
-/* grouping */
-h1, h2, h3, h4, h5, h6 {color:blue;}
-</code></pre><p><strong>声明分组</strong><br>我们既可以对选择器进行分组，也可以对声明分组。<br>假设您希望所有 h1 元素都有红色背景，并使用 28 像素高的 Verdana 字体显示为蓝色文本，可以写以下样式：</p>
-<pre><code>h1 {font: 28px Verdana;}
-h1 {color: blue;}
-h1 {background: red;}
-</code></pre><p>但是上面这种做法的效率并不高。尤其是当我们为一个有多个样式的元素创建这样一个列表时会很麻烦。相反，我们可以将声明分组在一起：</p>
-<pre><code>h1 {
-  font: 28px Verdana;
-  color: blue;
-  background: red;
-}
-</code></pre><h2 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h2><p>类选择器允许以一种独立于文档元素的方式来指定样式。<br>该选择器可以单独使用，也可以与其他元素结合使用。<br><strong>提示</strong>：只有适当地标记文档后，才能使用这些选择器，所以使用这两种选择器通常需要先做一些构想和计划。<br>要应用样式而不考虑具体设计的元素，最常用的方法就是使用类选择器。</p>
-<p><strong>修改 HTML 代码</strong><br>在使用类选择器之前，需要修改具体的文档标记，以便类选择器正常工作。<br>为了将类选择器的样式与元素关联，必须将 class 指定为一个适当的值。请看下面的 HTML 代码：</p>
-<pre><code>&lt;h1 class=&quot;important&quot;&gt;
-This heading is very important.
-&lt;/h1&gt;
-
-&lt;p class=&quot;important&quot;&gt;
-This paragraph is very important.
-&lt;/p&gt;
-</code></pre><p>在上面的代码中，两个元素的 class 都指定为 important：第一个标题（ h1 元素），第二个段落（p 元素）。<br>然后我们使用以下语法向这些归类的元素应用样式，即类名前有一个点号（.）</p>
-<pre><code>.important {color:red;}
-</code></pre><p><strong>结合元素选择器</strong><br>类选择器可以结合元素选择器来使用。<br>例如，您可能希望只有段落显示为红色文本：</p>
-<pre><code>p.important {color:red;}
-</code></pre><p>选择器现在会匹配 class 属性包含 important 的所有 p 元素，但是其他任何类型的元素都不匹配，不论是否有此 class 属性。选择器 p.important 解释为：“其 class 属性值为 important 的所有段落”。 因为 h1 元素不是段落，这个规则的选择器与之不匹配，因此 h1 元素不会变成红色文本。<br>如果你确实希望为 h1 元素指定不同的样式，可以使用选择器 h1.important：</p>
-<pre><code>p.important {color:red;}
-h1.important {color:blue;}
-</code></pre><p><strong>CSS 多类选择器</strong><br>在 HTML 中，一个 class 值中可能包含一个词列表，各个词之间用空格分隔。例如，如果希望将一个特定的元素同时标记为重要（important）和警告（warning），就可以写作：</p>
-<pre><code>&lt;p class=&quot;important warning&quot;&gt;
-This paragraph is a very important warning.
-&lt;/p&gt;
-</code></pre><p>这两个词的顺序无关紧要，写成 warning important 也可以。<br>我们假设 class 为 important 的所有元素都是粗体，而 class 为 warning 的所有元素为斜体，class 中同时包含 important 和 warning 的所有元素还有一个银色的背景 。就可以写作：</p>
-<pre><code>.important {font-weight:bold;}
-.warning {font-style:italic;}
-.important.warning {background:silver;}
-</code></pre><h2 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h2><p>在某些方面，ID 选择器类似于类选择器，不过也有一些重要差别。<br><strong>语法</strong><br>首先，ID 选择器前面有一个 # 号 - 也称为棋盘号或井号。<br>请看下面的规则：</p>
-<pre><code>#intro {font-weight:bold;}
-</code></pre><p>第二个区别是 ID 选择器不引用 class 属性的值，毫无疑问，它要引用 id 属性中的值。<br>以下是一个实际 ID 选择器的例子：</p>
-<pre><code>&lt;p id=&quot;intro&quot;&gt;This is a paragraph of introduction.&lt;/p&gt;
-</code></pre><p><strong>类选择器还是 ID 选择器？</strong></p>
-<p>在类选择器这一章中我们曾讲解过，可以为任意多个元素指定类。前一章中类名 important 被应用到 p 和 h1 元素，而且它还可以应用到更多元素。</p>
-<p><strong>区别 1：只能在文档中使用一次</strong><br>与类不同，在一个 HTML 文档中，ID 选择器会使用一次，而且仅一次。</p>
-<p><strong>区别 2：不能使用 ID 词列表</strong><br>不同于类选择器，ID 选择器不能结合使用，因为 ID 属性不允许有以空格分隔的词列表。</p>
-<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><p><strong>简单属性选择</strong><br>如果希望选择有某个属性的元素，而不论属性值是什么，可以使用简单属性选择器。</p>
-<p><strong>例子 1</strong><br>如果您希望把包含标题（title）的所有元素变为红色，可以写作：</p>
-<pre><code>*[title] {color:red;}
-</code></pre><hr>
-<p><strong>例子 2</strong><br>与上面类似，可以只对有 href 属性的锚（a 元素）应用样式：</p>
-<pre><code>a[href] {color:red;}
-</code></pre><hr>
-<p><strong>例子 3</strong><br>还可以根据多个属性进行选择，只需将属性选择器链接在一起即可。<br>例如，为了将同时有 href 和 title 属性的 HTML 超链接的文本设置为红色，可以这样写：</p>
-<pre><code>a[href][title] {color:red;}
-</code></pre><hr>
-<p><strong>根据具体属性值选择</strong><br>除了选择拥有某些属性的元素，还可以进一步缩小选择范围，只选择有特定属性值的元素。</p>
-<p>例如，假设希望将指向 Web 服务器上某个指定文档的超链接变成红色，可以这样写：</p>
-<pre><code>a[href=&quot;http://blog.lifire.cn&quot;] {color: red;}
-</code></pre><h2 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h2><p><strong>根据上下文选择元素</strong><br>我们可以定义后代选择器来创建一些规则，使这些规则在某些文档结构中起作用，而在另外一些结构中不起作用。<br>举例来说，如果您希望只对 h1 元素中的 em 元素应用样式，可以这样写：</p>
-<pre><code>h1 em {color:red;}
-</code></pre><p>上面这个规则会把作为 h1 元素后代的 em 元素的文本变为 红色。其他 em 文本（如段落或块引用中的 em）则不会被这个规则选中：</p>
-<pre><code>&lt;h1&gt;This is a &lt;em&gt;important&lt;/em&gt; heading&lt;/h1&gt;
-&lt;p&gt;This is a &lt;em&gt;important&lt;/em&gt; paragraph.&lt;/p&gt;
-</code></pre><p>当然，您也可以在 h1 中找到的每个 em 元素上放一个 class 属性，但是显然，后代选择器的效率更高。</p>
-<p><strong>后代选择器具体应用</strong><br>后代选择器的功能极其强大。有了它，可以使 HTML 中不可能实现的任务成为可能。<br>假设有一个文档，其中有一个边栏，还有一个主区。边栏的背景为蓝色，主区的背景为白色，这两个区都包含链接列表。不能把所有链接都设置为蓝色，因为这样一来边栏中的蓝色链接都无法看到。<br>解决方法是使用后代选择器。在这种情况下，可以为包含边栏的 div 指定值为 sidebar 的 class 属性，并把主区的 class 属性值设置为 maincontent。然后编写以下样式：</p>
-<pre><code>div.sidebar {background:blue;}
-div.maincontent {background:white;}
-div.sidebar a:link {color:white;}
-div.maincontent a:link {color:blue;}
-</code></pre><p>有关后代选择器有一个易被忽视的方面，即两个元素之间的层次间隔可以是无限的。<br>例如，如果写作 ul em，这个语法就会选择从 ul 元素继承的所有 em 元素，而不论 em 的嵌套层次多深。<br>因此，ul em 将会选择以下标记中的所有 em 元素：</p>
-<pre><code>&lt;ul&gt;
-  &lt;li&gt;List item 1
-    &lt;ol&gt;
-      &lt;li&gt;List item 1-1&lt;/li&gt;
-      &lt;li&gt;List item 1-2&lt;/li&gt;
-      &lt;li&gt;List item 1-3
-        &lt;ol&gt;
-          &lt;li&gt;List item 1-3-1&lt;/li&gt;
-          &lt;li&gt;List item &lt;em&gt;1-3-2&lt;/em&gt;&lt;/li&gt;
-          &lt;li&gt;List item 1-3-3&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-      &lt;li&gt;List item 1-4&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;List item 2&lt;/li&gt;
-  &lt;li&gt;List item 3&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre><h2 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h2><p><strong>选择子元素</strong><br>如果您不希望选择任意的后代元素，而是希望缩小范围，只选择某个元素的子元素，请使用子元素选择器（Child selector）。<br>例如，如果您希望选择只作为 h1 元素子元素的 strong 元素，可以这样写：</p>
-<pre><code>h1 &gt; strong {color:red;}
-</code></pre><p>这个规则会把第一个 h1 下面的两个 strong 元素变为红色，但是第二个 h1 中的 strong 不受影响：</p>
-<pre><code>&lt;h1&gt;This is &lt;strong&gt;very&lt;/strong&gt; &lt;strong&gt;very&lt;/strong&gt; important.&lt;/h1&gt;
-&lt;h1&gt;This is &lt;em&gt;really &lt;strong&gt;very&lt;/strong&gt;&lt;/em&gt; important.&lt;/h1&gt;
-</code></pre><h2 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h2><p><strong>选择相邻兄弟</strong><br>如果需要选择紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器（Adjacent sibling selector）。<br>例如，如果要增加紧接在 h1 元素后出现的段落的上边距，可以这样写：</p>
-<pre><code>h1 + p {margin-top:50px;}
-</code></pre><p>这个选择器读作：“选择紧接在 h1 元素后出现的段落，h1 和 p 元素拥有共同的父元素”。</p>
-<p>相邻兄弟选择器使用了加号（+），即相邻兄弟结合符（Adjacent sibling combinator）。<br>请看下面这个文档树片段：</p>
-<pre><code>&lt;div&gt;
-  &lt;ul&gt;
-    &lt;li&gt;List item 1&lt;/li&gt;
-    &lt;li&gt;List item 2&lt;/li&gt;
-    &lt;li&gt;List item 3&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;ol&gt;
-    &lt;li&gt;List item 1&lt;/li&gt;
-    &lt;li&gt;List item 2&lt;/li&gt;
-    &lt;li&gt;List item 3&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</code></pre><p>在上面的片段中，div 元素中包含两个列表：一个无序列表，一个有序列表，每个列表都包含三个列表项。这两个列表是相邻兄弟，列表项本身也是相邻兄弟。不过，第一个列表中的列表项与第二个列表中的列表项不是相邻兄弟，因为这两组列表项不属于同一父元素（最多只能算堂兄弟）。<br>请记住，用一个结合符只能选择两个相邻兄弟中的第二个元素。请看下面的选择器：</p>
-<pre><code>li + li {font-weight:bold;}
-</code></pre><p>上面这个选择器只会把列表中的第二个和第三个列表项变为粗体。第一个列表项不受影响。</p>
-<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><p><strong>伪类的语法：</strong></p>
-<pre><code>selector : pseudo-class {property: value}
-</code></pre><p>CSS 类也可与伪类搭配使用。</p>
-<pre><code>selector.class : pseudo-class {property: value}
-</code></pre><p><strong>锚伪类</strong><br>在支持 CSS 的浏览器中，链接的不同状态都可以不同的方式显示，这些状态包括：活动状态，已被访问状态，未被访问状态，和鼠标悬停状态。</p>
-<pre><code>a:link {color: #FF0000}        /* 未访问的链接 */
-a:visited {color: #00FF00}    /* 已访问的链接 */
-a:hover {color: #FF00FF}    /* 鼠标移动到链接上 */
-a:active {color: #0000FF}    /* 选定的链接 */
-</code></pre><p>提示：在 CSS 定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。<br>提示：在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/wechatpay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进阶</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">css选择器</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">nginx配置</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://blog.lifire.cn/2019/02/15/cssSelect/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/02/15/cssPositioning/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          css 定位
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/02/15/css/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">css 基础语法</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -497,9 +219,9 @@ a:active {color: #0000FF}    /* 选定的链接 */
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
